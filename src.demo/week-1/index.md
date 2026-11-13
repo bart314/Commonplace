@@ -1,0 +1,1 @@
+In de index van de week wordt de algemene introductie van de betreffende week gezet. Deze komt in het blok bovenaan de tegels die naar de individuele opdrachten en oefeningen leiden.

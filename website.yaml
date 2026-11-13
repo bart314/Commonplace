@@ -1,0 +1,15 @@
+titel: demo website
+weken:
+  week1: 
+    titel: Ways of seeing
+    nav:
+      - practical: practical1
+      - reading: reading1
+      - practical: practical2
+      - reading: reading2
+  week2: 
+    titel: World and relations
+    nav:
+      - practical: practical1
+      - reading: reading1
+      - practical: practical2

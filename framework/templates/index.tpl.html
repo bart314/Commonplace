@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A place for readings, conversations and practical investigations. Each week brings together a set of ideas and exercises; follow the sequence or explore the material at your own pace.">
+  <title>{{page_title}} • Commonplace</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/site.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html">FIELDNOTES<span>.</span></a>
+    <div class="header-tools"><button class="theme-toggle" type="button" data-theme-toggle>Dark mode</button></div>
+  </div>
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><span aria-current="page">Home</span></nav>
+</header>
+<main>
+  <section class="page-intro">
+    <div class="intro-copy">
+      <p class="eyebrow">COURSE OVERVIEW</p>
+      <h1>{{page_title}}</h1>
+      <p class="lead">{{page_intro}}</p>
+    </div>
+    <img class="intro-image" src="assets/images/home.svg" alt="" fetchpriority="high">
+  </section>
+  
+<section aria-labelledby="section-title">
+  <div class="section-heading"><h2 id="section-title">The weeks</h2><small>2 items</small></div>
+  <div class="tile-list">
+    {{index_tiles}}
+  </div>
+</section>
+  
+</main>
+<footer class="page-footer"><div class="footer-inner">Fieldnotes · Course material · Replace this footer with your own details.</div></footer>
+</body>
+</html>

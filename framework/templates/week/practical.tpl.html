@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Choose a place you know well. Describe it without treating it as a neutral backdrop. What relations, habits and histories make this place recognisable?">
+  <title>{{title}} • Commonplace</title>
+  <link rel="stylesheet" href="../../assets/css/style.css">
+  <script src="../../assets/js/site.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html">Commonplace<span>.</span></a>
+    <div class="header-tools"><button class="theme-toggle" type="button" data-theme-toggle>Dark mode</button></div>
+  </div>
+  <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../index.html">Home</a> <span class="separator" aria-hidden="true">/</span> <a href="index.html">Week 1</a> <span class="separator" aria-hidden="true">/</span> <span aria-current="page">A situated observation</span></nav>
+</header>
+<main>
+  <section class="page-intro">
+    <div class="intro-copy">
+      <p class="eyebrow">PRACTICAL</p>
+      <h1>{{title}}</h1>
+      <p class="lead">{{intro}}</p>
+    </div>
+    <img class="intro-image" src="../../assets/images/practice.svg" alt="" fetchpriority="high">
+  </section>
+  
+  <div class="article-layout">
+    {{content}}
+  </div>
+</main>
+
+<footer class="page-footer"><div class="footer-inner">Fieldnotes · Course material · Replace this footer with your own details.</div></footer>
+</body>
+</html>

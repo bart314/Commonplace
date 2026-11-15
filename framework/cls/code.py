@@ -6,6 +6,9 @@ def create_index(week, index_contents):
     with open('framework/templates/week/index.tpl.html', 'r') as f:
         page = f.read()
     index_tiles = ''.join([create_index_tile(x) for x in index_contents])
+    legal_tiles = create_legal_content()
+
+
     page = page.replace('{{index_tiles}}', index_tiles)
     
     with open(f'src/week-{week}/index.md', 'r') as md:
@@ -15,6 +18,9 @@ def create_index(week, index_contents):
     page = page.replace('{{titel}}', loaded_data['weken'][f'week{week}']['titel'])
     page = page.replace('{{content}}', html)
     return page
+
+def create_legal_content():
+    pass
 
 def create_index_tile(contents, in_week=True):
     page_type, page_link, page_title, page_intro = contents
@@ -56,11 +62,11 @@ def create_main_index():
     return template
 
 
-def create_page(week_number, template_source, page_source):
-    with open(f'framework/templates/week/{template_source}.tpl.html', 'r') as f:
+def create_page(template_source, page_source):
+    with open(template_source, 'r') as f:
         page = f.read()
     
-    with open(f'src/week-{week_number}/{page_source}.md', 'r') as md:
+    with open(page_source, 'r') as md:
         html = markdown.markdown(md.read())
 
     soup = BeautifulSoup(html, "html.parser")

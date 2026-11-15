@@ -31,7 +31,7 @@ for w in range(1, len(loaded_data['weken'])+1):
             next
         
         try: 
-            page, title, intro = create_page(w, page_type, page_content)
+            page, title, intro = create_page( f'framework/templates/week/{page_type}.tpl.html', f'src/week-{w}/{page_content}.md')
         except ValueError as e:
             print(f'\nFOUT: {e}')
             print(f'markdown-bestand: {page_content}, pagina-type: {page_type}\n')

@@ -11,3 +11,7 @@ Het materiaal wat ik ontwikkeld zit op een ander, meer creatief vlak. Veel voorb
 Specifiek kent *The Commonplace* een opbouw in weken – het is immers primair een onderwijs-framework. Elke week bestaat uit meerdere markdown-bestanden die ofwel een leesopdracht ofwel een praktische oefening bevatten. Deze oefeningen worden als *tegels* op de index-pagina van de betreffende week weergegeven.
 
 De opbouw van de website is gegeven in het bestand `website.yaml` in de *root* van het project. De individuele weken staan dan weer als tegels in de index van het project zelf.
+
+
+## Legal
+Omdat elke onderwijsmodule ook een onderdeeltje 'regels en beoordelingssystematiek' heeft, voorziet het framework daar ook in. Hiervoor worden onder de week-tegels op de hoofdpagina de 'legal'-tegels gezet. Hier komt de inhoud in die in de markdown-bestanden in `src/legal/` is opgeslagen en die wordt opgezet volgens de specs in `website.yaml`.

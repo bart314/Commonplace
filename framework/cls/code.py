@@ -6,9 +6,6 @@ def create_index(week, index_contents):
     with open('framework/templates/week/index.tpl.html', 'r') as f:
         page = f.read()
     index_tiles = ''.join([create_index_tile(x) for x in index_contents])
-    legal_tiles = create_legal_content()
-
-
     page = page.replace('{{index_tiles}}', index_tiles)
     
     with open(f'src/week-{week}/index.md', 'r') as md:
@@ -19,8 +16,6 @@ def create_index(week, index_contents):
     page = page.replace('{{content}}', html)
     return page
 
-def create_legal_content():
-    pass
 
 def create_index_tile(contents, in_week=True):
     page_type, page_link, page_title, page_intro = contents
@@ -39,7 +34,7 @@ def create_index_tile(contents, in_week=True):
     tile = tile.replace('{{page_intro}}', page_intro)
     return tile
 
-def create_main_index():
+def create_main_index(legal_contents):
     with open('framework/templates/index.tpl.html', 'r') as f:
         template = f.read()
     with open('src/index.md') as md:
@@ -55,14 +50,16 @@ def create_main_index():
         contents.append([f'week-{idx+1}', f'weeks/week-{idx+1}/index', items[idx].get_text(), items[idx].find_next_sibling("p").get_text()])
 
     index_tiles = ''.join(create_index_tile(x, in_week=False) for x in contents)
+    legal_tiles = ''.join(create_index_tile(x) for x in legal_contents)
 
     template = template.replace('{{page_title}}', title.get_text())
     template = template.replace('{{page_intro}}', intro.get_text())
     template = template.replace('{{index_tiles}}', index_tiles)
+    template = template.replace('{{legal_tiles}}', legal_tiles)
     return template
 
 
-def create_page(template_source, page_source):
+def create_page(template_source, page_source, parent_dir):
     with open(template_source, 'r') as f:
         page = f.read()
     
@@ -80,6 +77,7 @@ def create_page(template_source, page_source):
     intro_content = intro.get_text()
     page = page.replace('{{title}}', title_content)
     page = page.replace('{{intro}}', intro_content)
+    page = page.replace('{{parent_dir}}', parent_dir.replace('-', ' ').capitalize())
     title.decompose()
     intro.decompose()
     page = page.replace('{{content}}', soup.prettify())
